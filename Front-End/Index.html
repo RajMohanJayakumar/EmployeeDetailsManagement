@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
 <script>
 
 $(document).ready(function(){
@@ -15,6 +16,16 @@ var Html='<tr><td>'+value.id+'</td><td>'+value.name+'</td><td>'+value.city+'</td
 });
 });
 
+
+$('#button1').click(function(){
+$.ajax({
+    url: 'http://localhost:8080/delete/3',
+    type: 'DELETE',
+    success: function(result) {
+        console.log("Success");
+    }
+});
+});
 </script>
 </head>
 <body>
@@ -31,6 +42,6 @@ var Html='<tr><td>'+value.id+'</td><td>'+value.name+'</td><td>'+value.city+'</td
 </tr>
 <tbody id="tbody"></tbody>
 </table>
-
+<button id="one">Delete</button>
 </body>
 </html>
