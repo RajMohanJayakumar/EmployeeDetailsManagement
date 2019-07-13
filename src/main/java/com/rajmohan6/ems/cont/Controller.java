@@ -32,7 +32,7 @@ public class Controller {
 		c.update(id, name, city);
 	}
 	
-	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
 	public void delete(@PathVariable int id) {
 		c.delete(id);
 	}

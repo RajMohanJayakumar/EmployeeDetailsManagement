@@ -17,9 +17,9 @@ var Html='<tr><td>'+value.id+'</td><td>'+value.name+'</td><td>'+value.city+'</td
 });
 
 
-$('#button1').click(function(){
+$(document).on("click","#one",function(){
 $.ajax({
-    url: 'http://localhost:8080/delete/3',
+    url: 'http://localhost:8080/delete/113',
     type: 'DELETE',
     success: function(result) {
         console.log("Success");
