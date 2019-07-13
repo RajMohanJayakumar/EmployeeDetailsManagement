@@ -10,7 +10,7 @@ $(document).ready(function(){
 $.getJSON("http://localhost:8080/fetchall",function(obj){
 	
 $.each(obj,function(key,value){
-var Html='<tr class="t'+value.id+'"><td>'+value.id+'</td><td id="ed">'+value.name+'</td><td id="ed">'+value.city+'</td><td id="ed"><button id="upd" class="btn btn-success">Update</button></td><td><button id="one" value='+value.city+' class="btn btn-danger">Delete</button></td></tr>';
+var Html='<tr class="t'+value.id+'"><td>'+value.id+'</td><td id="ed">'+value.name+'</td><td id="ed">'+value.city+'</td><td id="ed"><button id="upd" class="btn btn-success">Update</button></td><td><button id="one" value='+value.id+' class="btn btn-danger">Delete</button></td></tr>';
             $('#tbody').append(Html);
 });
 
