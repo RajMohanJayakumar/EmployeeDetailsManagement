@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 	
 	Crud c = new Crud();
+	Empdetail empp = new Empdetail();
 	
 	@RequestMapping("fetch/{id}")
 	@Produces(MediaType.APPLICATION_JSON_VALUE)
@@ -26,13 +27,13 @@ public class Controller {
 	}
 	
 	@RequestMapping(value="/create",method=RequestMethod.POST)
-	public void create(int id,String name,String city) {
-		c.create(id, name, city);
+	public void create(Empdetail emp) {
+		c.create(emp.getId(),emp.getName(), emp.getCity());
 	}
 	
 	@RequestMapping(value="/update",method=RequestMethod.PUT)
-	public void update(int id,String name,String city) {
-		c.update(id, name, city);
+	public void update(Empdetail emp) {
+		c.update(emp.getId(), emp.getName(), emp.getCity());
 	}
 	
 	@RequestMapping(value="/delete",method=RequestMethod.DELETE)
