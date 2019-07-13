@@ -19,7 +19,7 @@ var Html='<tr><td>'+value.id+'</td><td>'+value.name+'</td><td>'+value.city+'</td
 
 $(document).on("click","#one",function($button){
 var id = $(this).attr("value");
-var urls="http://localhost:8080/delete/"+id;
+var urls="http://localhost:8080/delete/?id="+id;
 $.ajax({
     url: urls,
     type: 'DELETE',

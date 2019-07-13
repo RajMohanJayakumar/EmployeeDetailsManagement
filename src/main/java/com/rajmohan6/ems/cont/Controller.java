@@ -1,5 +1,7 @@
 package com.rajmohan6.ems.cont;
+import javax.ws.rs.Produces;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ public class Controller {
 	Crud c = new Crud();
 	
 	@RequestMapping("fetch/{id}")
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
 	public String fetch(@PathVariable int id) {
 		return c.readone(id);
 	}
@@ -22,18 +25,18 @@ public class Controller {
 		return c.readall();
 	}
 	
-	@RequestMapping(value="/create/{id}/{name}/{city}",method=RequestMethod.POST)
-	public void create(@PathVariable int id,@PathVariable String name,@PathVariable String city) {
+	@RequestMapping(value="/create",method=RequestMethod.POST)
+	public void create(int id,String name,String city) {
 		c.create(id, name, city);
 	}
 	
-	@RequestMapping(value="/update/{id}/{name}/{city}",method=RequestMethod.PUT)
-	public void update(@PathVariable int id,@PathVariable String name,@PathVariable String city) {
+	@RequestMapping(value="/update",method=RequestMethod.PUT)
+	public void update(int id,String name,String city) {
 		c.update(id, name, city);
 	}
 	
-	@RequestMapping(value="/delete/{id}",method=RequestMethod.DELETE)
-	public void delete(@PathVariable int id) {
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE)
+	public void delete(int id) {
 		c.delete(id);
 	}
 
