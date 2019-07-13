@@ -30,9 +30,9 @@ case 2:
 	System.out.println("1");
 	while(rs.next()) {
 		JSONObject obj = new JSONObject();
-		obj.put("id", rs.getString(3));
+		obj.put("id", rs.getString(1));
 		obj.put("name", rs.getString(2));
-		obj.put("city", rs.getString(1));
+		obj.put("city", rs.getString(3));
 		array.add(obj);
 		
 		//str.append("{'id':'"+rs.getString(1)+"','name':'"+rs.getString(2)+"','City':'"+rs.getString(3)+"'},");		
