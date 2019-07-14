@@ -26,4 +26,3 @@ public class Crud {
 		return q.dbConnect(query, 4);
 	}
 }
-;

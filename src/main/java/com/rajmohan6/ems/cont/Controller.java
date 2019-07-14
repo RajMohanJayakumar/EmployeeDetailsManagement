@@ -5,6 +5,7 @@ import javax.ws.rs.Produces;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 	
 	Crud c = new Crud();
-	Empdetail empp = new Empdetail();
 	
 	@RequestMapping("fetch/{id}")
 	public String fetch(@PathVariable int id) {
@@ -26,13 +26,14 @@ public class Controller {
 		return c.readall();
 	}
 	
-	@RequestMapping(value="/create",method=RequestMethod.POST)
-	public void create(Empdetail emp) {
+	@RequestMapping(value="/create",method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public void create(@RequestBody Empdetail emp) {
+		System.out.println(emp.getId()+" "+emp.getName()+" "+emp.getCity());
 		c.create(emp.getId(),emp.getName(), emp.getCity());
 	}
 	
 	@RequestMapping(value="/update",method=RequestMethod.PUT)
-	public void update(Empdetail emp) {
+	public void update(@RequestBody Empdetail emp) {
 		c.update(emp.getId(), emp.getName(), emp.getCity());
 	}
 	
