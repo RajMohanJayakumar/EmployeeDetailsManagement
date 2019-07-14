@@ -1,6 +1,4 @@
 package com.rajmohan6.ems.cont;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.Produces;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,25 +14,24 @@ public class Controller {
 	
 	Crud c = new Crud();
 	
-	@RequestMapping("fetch/{id}")
+	@RequestMapping(value="fetch/{id}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public String fetch(@PathVariable int id) {
 		return c.readone(id);
 	}
 	
-	@RequestMapping("/fetchall")
+	@RequestMapping(value="/fetchall", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public String fetchall() {
 		return c.readall();
 	}
 	
 	@RequestMapping(value="/create",method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public void create(@RequestBody Empdetail emp) {
-		System.out.println(emp.getId()+" "+emp.getName()+" "+emp.getCity());
 		c.create(emp.getId(),emp.getName(), emp.getCity());
 	}
 	
-	@RequestMapping(value="/update",method=RequestMethod.PUT)
+	@RequestMapping(value="/update",method=RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public void update(@RequestBody Empdetail emp) {
-		c.update(emp.getId(), emp.getName(), emp.getCity());
+		c.update(emp);
 	}
 	
 	@RequestMapping(value="/delete",method=RequestMethod.DELETE)

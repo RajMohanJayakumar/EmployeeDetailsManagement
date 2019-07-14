@@ -16,8 +16,8 @@ public class Crud {
 		String query = "select * from employee1 where id="+id;
 		return q.dbConnect(query, 3);
 	}
-	public String update(int id,String name,String city) {
-		String query = "UPDATE employee1 set name='"+name+"',city='"+city+"' where id="+id;
+	public String update(Empdetail emp) {
+		String query = "UPDATE employee1 set id="+emp.getId()+",name='"+emp.getName()+"',city='"+emp.getCity()+"' where id="+emp.getIdd();
 		return q.dbConnect(query, 4);
 	}
 	

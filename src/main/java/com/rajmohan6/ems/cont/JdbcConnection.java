@@ -17,7 +17,6 @@ case 1:
 	Statement stmt=con.createStatement();  
 	stmt.executeUpdate(query);
 	con.close();
-	System.out.println("1");
 	return "";
 }
 case 2:
@@ -27,7 +26,6 @@ case 2:
 	//StringBuilder str = new StringBuilder();
 	//str.append("[");
 	JSONArray array = new JSONArray();
-	System.out.println("1");
 	while(rs.next()) {
 		JSONObject obj = new JSONObject();
 		obj.put("id", rs.getString(1));
@@ -54,14 +52,12 @@ case 3:{
 		array.add(obj);
 		String str = array.toJSONString();
 	con.close(); 
-	System.out.println("1");
 	return str;
 }
 case 4:{
 	Statement stmt=con.createStatement();  
 	stmt.executeUpdate(query);
 	con.close();
-	System.out.println("1");
 	return "";
 }
 //case 6:{
