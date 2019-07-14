@@ -1,4 +1,5 @@
 package com.rajmohan6.ems.cont;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 
 import org.springframework.http.MediaType;
@@ -16,7 +17,6 @@ public class Controller {
 	Empdetail empp = new Empdetail();
 	
 	@RequestMapping("fetch/{id}")
-	@Produces(MediaType.APPLICATION_JSON_VALUE)
 	public String fetch(@PathVariable int id) {
 		return c.readone(id);
 	}
