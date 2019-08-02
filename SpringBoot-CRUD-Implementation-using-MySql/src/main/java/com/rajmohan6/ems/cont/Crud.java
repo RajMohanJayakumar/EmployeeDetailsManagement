@@ -2,8 +2,8 @@ package com.rajmohan6.ems.cont;
 
 public class Crud {
 	JdbcConnection q = new JdbcConnection();
-	public void create(int id,String name,String city) {
-		String query = "INSERT INTO employee1 VALUES("+id+",'"+name+"','"+city+"')";
+	public void create(Empdetail emp) {
+		String query = "INSERT INTO employee1 VALUES("+emp.getId()+",'"+emp.getName()+"','"+emp.getCity()+"')";
 		q.dbConnect(query, 1);
 	}
 	
@@ -18,11 +18,11 @@ public class Crud {
 	}
 	public String update(Empdetail emp) {
 		String query = "UPDATE employee1 set id="+emp.getId()+",name='"+emp.getName()+"',city='"+emp.getCity()+"' where id="+emp.getIdd();
-		return q.dbConnect(query, 4);
+		return q.dbConnect(query, 1);
 	}
 	
 	public String delete(int id) {
 		String query = "DELETE from employee1 WHERE id="+id;
-		return q.dbConnect(query, 4);
+		return q.dbConnect(query, 1);
 	}
 }
