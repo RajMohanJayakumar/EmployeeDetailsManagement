@@ -25,8 +25,9 @@ public class Controller {
 	}
 	
 	@RequestMapping(value="/create",method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public void create(@RequestBody Empdetail emp) {
-		c.create(emp.getId(),emp.getName(), emp.getCity());
+	public String create(@RequestBody Empdetail emp) {
+		c.create(emp);
+		return "redirect:https://www.google.com";
 	}
 	
 	@RequestMapping(value="/update",method=RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
