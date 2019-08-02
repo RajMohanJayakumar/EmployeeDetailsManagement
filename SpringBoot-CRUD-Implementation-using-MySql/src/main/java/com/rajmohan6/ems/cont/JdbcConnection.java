@@ -54,22 +54,6 @@ case 3:{
 	con.close(); 
 	return str;
 }
-case 4:{
-	Statement stmt=con.createStatement();  
-	stmt.executeUpdate(query);
-	con.close();
-	return "";
-}
-//case 6:{
-//	JSONArray array = new JSONArray();
-//	JSONObject obj = new JSONObject();
-//	
-//	obj.put("id", rs.getString(1));
-//	obj.put("name", rs.getString(2));
-//	obj.put("city", rs.getString(3));
-//	array.add(obj);
-//	String Str = array.toString();
-//}
 }
 }catch(Exception e){ System.out.println(e);}
 return null;  
