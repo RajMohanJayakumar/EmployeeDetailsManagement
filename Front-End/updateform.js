@@ -15,7 +15,8 @@ $(document).on("click","#update",function($button){
 		"city":city,
 		"idd":idd
 	};
-	var urls="http://localhost:8080/update?id="+parameters.id;
+console.log(temp);
+	var urls="http://localhost:8080/update?id="+idd;
 	$.ajax({
     url: urls,
 	data: JSON.stringify(temp),

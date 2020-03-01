@@ -9,7 +9,7 @@ public String dbConnect(String query,int a){
 try{  
 Class.forName("com.mysql.jdbc.Driver");  
 Connection con=DriverManager.getConnection(  
-"jdbc:mysql://localhost:3306/empdetails","root","root");  
+"jdbc:mysql://localhost:3306/empdetails?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT\";","root","arunraj220");  
 
 switch(a) {
 case 1:

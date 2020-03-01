@@ -1,9 +1,11 @@
 $(document).ready(function(){
 $.getJSON("http://localhost:8080/fetchall",function(obj){
+console.log(obj);
 $.each(obj,function(key,value){
 var Html='<tr><td>'+value.id+'</td><td>'+value.name+'</td><td>'+value.city+'</td><td><button id="'+value.id+'" value="1" class="upd btn btn-success">Update</button></td><td><button id="del" value='+value.id+' class="btn btn-danger">Delete</button></td></tr>';
             $('#tbody').append(Html);
 });
+break;
 });
 
 $(document).on("click","#del",function($button){

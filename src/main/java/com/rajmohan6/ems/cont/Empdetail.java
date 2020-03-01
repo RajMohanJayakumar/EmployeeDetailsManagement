@@ -1,16 +1,16 @@
 package com.rajmohan6.ems.cont;
 
-public class Empdetail {
+public class EmpDetail {
 	private int id;
 	private String name;
 	private String city;
 	private int idd;
 	
-	public Empdetail() {
+	public EmpDetail() {
 		
 	}
 	
-	public Empdetail(int id, String name, String city, int idd) {
+	public EmpDetail(int id, String name, String city, int idd) {
 		super();
 		this.id = id;
 		this.name = name;
