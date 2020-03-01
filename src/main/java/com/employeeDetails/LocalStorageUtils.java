@@ -1,4 +1,4 @@
-package com.rajmohan6;
+package com.employeeDetails;
 
 import java.util.ArrayList;
 import java.util.HashMap;

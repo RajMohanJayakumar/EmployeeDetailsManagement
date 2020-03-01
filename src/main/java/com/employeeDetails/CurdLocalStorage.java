@@ -1,4 +1,4 @@
-package com.rajmohan6;
+package com.employeeDetails;
 
 import com.rajmohan6.ems.cont.EmpDetail;
 
